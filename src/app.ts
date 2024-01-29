@@ -1,5 +1,6 @@
 import express from "express";
 import { BaseController } from "./controllers/base/base-controller";
+import {checkJwt} from "./middlewares/JwtProvider";
 
 class App {
     public app: express.Application;
@@ -14,6 +15,7 @@ class App {
     }
 
     private initializeMiddlewares() {
+        // this.app.use(checkJwt);
         this.app.use(express.json());
     }
 

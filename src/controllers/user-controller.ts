@@ -14,12 +14,12 @@ export default class UserController extends BaseController {
         this.router.post(this.path + "/add", this.addUser);
     }
     getAllUsers = async (request: express.Request, response: express.Response) => {
-        const userList = await this.prisma.user.findMany();
+        const userList = await this.prisma.users.findMany();
         response.json(userList);
     };
     addUser = async (request: express.Request, response: express.Response) => {
         const resBody = request.body;
-        const user = await this.prisma.user.create({
+        const user = await this.prisma.users.create({
                 data: {
                     username: resBody.username,
                     password: resBody.password

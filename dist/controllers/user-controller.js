@@ -6,12 +6,12 @@ class UserController extends base_controller_1.BaseController {
         super();
         this.path = "/users";
         this.getAllUsers = async (request, response) => {
-            const userList = await this.prisma.user.findMany();
+            const userList = await this.prisma.users.findMany();
             response.json(userList);
         };
         this.addUser = async (request, response) => {
             const resBody = request.body;
-            const user = await this.prisma.user.create({
+            const user = await this.prisma.users.create({
                 data: {
                     username: resBody.username,
                     password: resBody.password

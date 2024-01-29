@@ -6,8 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 const app_1 = __importDefault(require("./app"));
 const user_controller_1 = __importDefault(require("./controllers/user-controller"));
+const auth_controller_1 = __importDefault(require("./controllers/auth-controller"));
 dotenv_1.default.config();
 const port = process.env.PORT || 3000;
-const app = new app_1.default([new user_controller_1.default()], port);
+const app = new app_1.default([new user_controller_1.default(), new auth_controller_1.default()], port);
 app.listen();
 //# sourceMappingURL=index.js.map

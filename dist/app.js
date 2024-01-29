@@ -12,6 +12,7 @@ class App {
         this.initializeControllers(controllers);
     }
     initializeMiddlewares() {
+        // this.app.use(checkJwt);
         this.app.use(express_1.default.json());
     }
     initializeControllers(controllers) {

@@ -19,7 +19,7 @@ class App {
 
     private initializeControllers(controllers: BaseController[]) {
         this.app.get("/", (request, response) => {
-            response.send("Application update OK is running");
+            response.send("Application deploy prod is running");
         });
         controllers.forEach((controller) => {
             this.app.use("/", controller.router);

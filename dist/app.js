@@ -15,9 +15,8 @@ class App {
         this.app.use(express_1.default.json());
     }
     initializeControllers(controllers) {
-        var appname = process.env.APP_NAME;
         this.app.get("/", (request, response) => {
-            response.send(`Application ${appname} deploy prod Version 1 is running`);
+            response.send("Application is running");
         });
         controllers.forEach((controller) => {
             this.app.use("/", controller.router);

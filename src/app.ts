@@ -20,7 +20,7 @@ class App {
     private initializeControllers(controllers: BaseController[]) {
         var appname = process.env.APP_NAME;
         this.app.get("/", (request, response) => {
-            response.send(`Application ${appname} deploy prod Version 2 is running`);
+            response.send(`Application ${appname} deploy prod Version 3 is running`);
         });
         controllers.forEach((controller) => {
             this.app.use("/", controller.router);

@@ -13,6 +13,9 @@ phases:
   build:
     commands:
       - npm run build
+  test:
+    commands:
+      - grep -Fq "Application is running" app.js
   post_build:
     commands:
       - echo "we are in the post build phase"

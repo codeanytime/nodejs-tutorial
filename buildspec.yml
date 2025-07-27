@@ -17,3 +17,8 @@ phases:
     commands:
       - echo "we are in the post build phase"
 
+artifacts:
+  # Thư mục chứa code sau build
+  base-directory: dist
+  files:
+    - '**/*'  # đẩy tất cả file trong dist lên S3

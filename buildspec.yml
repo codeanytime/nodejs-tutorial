@@ -9,11 +9,10 @@ phases:
   pre_build:
     commands:
       - echo "we are in the pre build phase"
+      - npm install
   build:
     commands:
-      - echo "we are in the build block"
-      - echo "we will run some tests"
-      - grep -Fq "running" index.html
+      - npm run build
   post_build:
     commands:
       - echo "we are in the post build phase"
